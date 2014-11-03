@@ -18,6 +18,7 @@ COLOR 0A
 SET /p nombre_llave=Nombre de la llave: 
 SET /p passphrase=Passphare (mas de 4 caracteres): 
 SET /p comentario=Comentario (tu email): 
+SET /p host=Host remoto (github.com) || SET host=github.com
 SET /p host_alias=Alias del host remoto (github.com): || SET host_alias=github.com
 :: SET nombre_llave=cristiankey
 :: SET passphrase=anything
@@ -31,7 +32,7 @@ SET archivo_config=%directorio_ssh%\config
 
 :: actualiza el archivo config para el alias
 ECHO Host %host_alias%>>%archivo_config%
-ECHO     HostName github.com>>%archivo_config%
+ECHO     HostName %host%>>%archivo_config%
 ECHO     User git>>%archivo_config%
 ECHO     IdentityFile %archivo_key%>>%archivo_config%
 
